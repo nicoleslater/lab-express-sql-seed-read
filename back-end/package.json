@@ -20,6 +20,7 @@
   "homepage": "https://github.com/joinpursuit/tuner-full-stack-app#readme",
   "dependencies": {
     "jest": "^27.4.7",
+    "nodemon": "^3.0.1",
     "supertest": "^6.2.0"
   }
 }
