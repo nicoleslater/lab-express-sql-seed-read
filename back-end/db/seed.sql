@@ -1,14 +1,5 @@
-DROP DATABASE IF EXISTS tuner_app;
-
-CREATE DATABASE tuner_app;
-
-\c tuner_appl
-
-CREATE TABLE songs (
-    id SERIAL PRIMARY KEY, 
-    name TEXT NOT NULL, 
-    artist TEXT, 
-    album TEXT, 
-    time TEXT, 
-    is_favorite BOOLEAN
-);
+INSERT INTO songs (name, artist, album, time, is_favorite)
+VALUES
+    ('Endless Love', 'Luther Vandross & Mariah Carey', 'Songs', '4:21', true),
+    ('I Will Always Love You', 'Whitney Houston', 'The Bodyguard Soundtrack', '4:31', true),
+    ('No Diggity', 'Blackstreet ft. Dr. Dre', 'Another Level', '4:14', true);
