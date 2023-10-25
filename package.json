@@ -4,5 +4,16 @@
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "nodemon": "^3.0.1"
-  }
+  },
+  "name": "lab-express-sql-seed-read",
+  "description": "Let's make our own music playlist app!",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
