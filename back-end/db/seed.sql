@@ -1,4 +1,4 @@
-\tuner_app;
+\c tuner_app;
 
 INSERT INTO songs (name, artist, album, time, is_favorite)
 VALUES
