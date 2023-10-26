@@ -1,5 +1,6 @@
 const express = require("express");
-const {getAllSongs} = require("../queries/songs");
+const {getAllSongs, getOneSong, createSong} = require("../queries/songs");
+const {checkName, checkBoolean } = require("../validations/checkSongs");
 
 const songs = express.Router();
 
