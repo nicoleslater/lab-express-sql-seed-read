@@ -1,5 +1,5 @@
 const express = require("express");
-const {getAllSongs, getOneSong, createSong, deleteSong, updateSong} = require("../queries/songs");
+const {getAllSongs, getOneSong, createSong, deleteSong, updateSong} = require("../queries/songs.js");
 const {checkName, checkBoolean } = require("../validations/checkSongs");
 
 const songs = express.Router();
@@ -7,6 +7,7 @@ const songs = express.Router();
 songs.get("/", async (req, res) => {
     const allSongs = await getAllSongs();
     if(allSongs[0]){
+        console.log(allSongs)
         res.status(200)
         .json ({ success: true, data: { payload: allSongs }});
     } else {
