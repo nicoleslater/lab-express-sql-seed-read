@@ -6,8 +6,9 @@ const songs = express.Router();
 
 songs.get("/", async (req, res) => {
     const allSongs = await getAllSongs();
+    console.log(allSongs)
     if(allSongs[0]){
-        console.log(allSongs)
+        
         res.status(200)
         .json ({ success: true, data: { payload: allSongs }});
     } else {
