@@ -1,5 +1,5 @@
 const express = require("express");
-const {getAllSongs, getOneSong, createSong, deleteSong} = require("../queries/songs");
+const {getAllSongs, getOneSong, createSong, deleteSong, updateSong} = require("../queries/songs");
 const {checkName, checkBoolean } = require("../validations/checkSongs");
 
 const songs = express.Router();
@@ -37,7 +37,7 @@ songs.post("/", checkName, checkBoolean, async (req, res) => {
 songs.delete("/:id", async (req, res) => {
     try {
         const { id } = req. params;
-        const deletedSong = await deletedSong(id);
+        const deletedSong = await deleteSong(id);
         if (deletedSong){
             res.status(200).json({success:true, payload: {data: deletedSong}})
         } else {
