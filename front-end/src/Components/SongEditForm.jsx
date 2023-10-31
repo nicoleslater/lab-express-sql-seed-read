@@ -67,7 +67,7 @@ function SongEditForm(){
                 placeholder="Name of Website"
                 required
                 />
-                <label htmlFor="url">URL</label>
+                <label htmlFor="url">URL:</label>
                 <input 
                 id="url"
                 type="text"
@@ -77,9 +77,31 @@ function SongEditForm(){
                 placeholder="http://"
                 onChange={handleTextChange}
                 />
-                <label>
-                    
-                </label>
+                <label htmlFor="album">Album:</label>
+                <input
+                id="album"
+                type="text"
+                name="album"
+                value={song.album}
+                placeholder=""
+                onChange={handleTextChange}
+                />
+                <label htmlFor="time">Time:</label>
+                <input 
+                id="time"
+                type="number"
+                name="time"
+                value={song.time}
+                placeholder=""
+                onChange={handleTextChange}
+                />
+                <label htmlFor="isFavorite">Favorite:</label>
+                <input 
+                id="isFavorite"
+                type="checkbox"
+                onChange={handleCheckboxChange}
+                checked={song.is_favorite}
+                />
             </form>
         </div>
     )
