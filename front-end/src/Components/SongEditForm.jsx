@@ -102,7 +102,14 @@ function SongEditForm(){
                 onChange={handleCheckboxChange}
                 checked={song.is_favorite}
                 />
+                <br />
+                <input type="submit" />
             </form>
+            <Link to={`/songs/${id}`}>
+                <button>Nevermind!</button>
+            </Link>
         </div>
-    )
+    );
 }
+
+export default SongEditForm;
