@@ -11,7 +11,7 @@ describe("Show Page", () => {
       body: {
         name: "Raspberry Beret",
         artist: "Prince",
-        time: "4:12",
+        time: "412",
         is_favorite: true,
       },
       log: true,

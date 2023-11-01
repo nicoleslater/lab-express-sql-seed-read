@@ -4,7 +4,7 @@
     name: "Fame",
     artist: "David Bowie",
     album: "Young Americans",
-    time: "4:12",
+    time: "412",
     is_favorite: true,
   },
   {
@@ -12,7 +12,7 @@
     name: "Once in a Lifetime",
     artist: "Talking Heads",
     album: "Remain in Light",
-    time: "4:19",
+    time: "419",
     is_favorite: true,
   },
   {
@@ -20,7 +20,7 @@
     name: "The Great Curve",
     artist: "Talking Heads",
     album: "Sand in the Vaseline",
-    time: "5:39",
+    time: "539",
     is_favorite: true,
   },
   {
@@ -28,7 +28,7 @@
     name: "(Nothing But) Flowers",
     artist: "Talking Heads",
     album: "Remain in Light",
-    time: "6:28",
+    time: "628",
     is_favorite: false,
   },
   {
@@ -36,7 +36,7 @@
     name: "Books about UFOs",
     artist: "Hüsker Dü",
     album: "New Day Rising",
-    time: "2:49",
+    time: "249",
     is_favorite: true,
   },
   {
@@ -44,7 +44,7 @@
     name: "Mr. Startup",
     artist: "Wolf Parade",
     album: "Thin Mind",
-    time: "3:31",
+    time: "331",
     is_favorite: true,
   },
   {
@@ -52,7 +52,7 @@
     name: "We Got the World",
     artist: "Icona Pop",
     album: "This is...",
-    time: "3:17",
+    time: "317",
     is_favorite: false,
   },
 ];

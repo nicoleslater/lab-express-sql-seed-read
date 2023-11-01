@@ -56,8 +56,7 @@ songs.put("/:id", async(req, res) => {
     if (updatedSong.id){
         res.status(200).json(updatedSong);
     } else {
-        res.redirect([404], "*")
-        // .json("There is no song found with that id")
+        res.status(404).json("There is no song found with that id")
     }
 });
 

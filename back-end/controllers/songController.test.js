@@ -36,13 +36,13 @@ describe("Songs", () => {
     await db.none("DELETE FROM songs WHERE true");
     await db.none("ALTER SEQUENCE songs_id_seq RESTART");
     await db.none(`INSERT INTO songs (name, artist, album, time, is_favorite) VALUES
-    ('Fame', 'David Bowie', 'Young Americans', '4:12', true ),
-    ('Once in a Lifetime', 'Talking Heads', 'Remain in Light', '4:19', true ),
-    ('The Great Curve', 'Talking Heads', 'Sand in the Vaseline', '5:39', true ),
-    ('(Nothing But) Flowers',  'Talking Heads', 'Remain in Light', '6:28', false ),
-    ('Books about UFOs', 'Hüsker Dü', 'New Day Rising', '2:49', true ),
-    ('Mr. Startup', 'Wolf Parade', 'Thin Mind', '3:31', true ),
-    ('We Got the World', 'Icona Pop', 'This is...', '3:17', false );`);
+    ('Fame', 'David Bowie', 'Young Americans', '412', true ),
+    ('Once in a Lifetime', 'Talking Heads', 'Remain in Light', '419', true ),
+    ('The Great Curve', 'Talking Heads', 'Sand in the Vaseline', '539', true ),
+    ('(Nothing But) Flowers',  'Talking Heads', 'Remain in Light', '628', false ),
+    ('Books about UFOs', 'Hüsker Dü', 'New Day Rising', '249', true ),
+    ('Mr. Startup', 'Wolf Parade', 'Thin Mind', '331', true ),
+    ('We Got the World', 'Icona Pop', 'This is...', '317', false );`);
   });
 
   afterAll(() => {
@@ -58,7 +58,7 @@ describe("Songs", () => {
             name: "Fame",
             artist: "David Bowie",
             album: "Young Americans",
-            time: "4:12",
+            time: "412",
             is_favorite: true,
           },
           {
@@ -66,7 +66,7 @@ describe("Songs", () => {
             name: "Once in a Lifetime",
             artist: "Talking Heads",
             album: "Remain in Light",
-            time: "4:19",
+            time: "419",
             is_favorite: true,
           },
           {
@@ -74,7 +74,7 @@ describe("Songs", () => {
             name: "The Great Curve",
             artist: "Talking Heads",
             album: "Sand in the Vaseline",
-            time: "5:39",
+            time: "539",
             is_favorite: true,
           },
           {
@@ -82,7 +82,7 @@ describe("Songs", () => {
             name: "(Nothing But) Flowers",
             artist: "Talking Heads",
             album: "Remain in Light",
-            time: "6:28",
+            time: "628",
             is_favorite: false,
           },
           {
@@ -90,7 +90,7 @@ describe("Songs", () => {
             name: "Books about UFOs",
             artist: "Hüsker Dü",
             album: "New Day Rising",
-            time: "2:49",
+            time: "249",
             is_favorite: true,
           },
           {
@@ -98,7 +98,7 @@ describe("Songs", () => {
             name: "Mr. Startup",
             artist: "Wolf Parade",
             album: "Thin Mind",
-            time: "3:31",
+            time: "331",
             is_favorite: true,
           },
           {
@@ -106,7 +106,7 @@ describe("Songs", () => {
             name: "We Got the World",
             artist: "Icona Pop",
             album: "This is...",
-            time: "3:17",
+            time: "317",
             is_favorite: false,
           },
         ];
@@ -124,7 +124,7 @@ describe("Songs", () => {
             name: "Star Roving",
             artist: "Slowdive",
             is_favorite: "false",
-            time: "5:37",
+            time: "537",
           });
 
           const parsedRes = JSON.parse(response.text);
@@ -133,7 +133,7 @@ describe("Songs", () => {
           expect(parsedRes.artist).toEqual("Slowdive");
           expect(parsedRes.name).toEqual("Star Roving");
           expect(parsedRes.is_favorite).toEqual(false);
-          expect(parsedRes.time).toEqual("5:37");
+          expect(parsedRes.time).toEqual("537");
         });
       });
       describe("handling an improper create request", () => {
@@ -141,7 +141,7 @@ describe("Songs", () => {
           const response = await request(songs).post("/songs").send({
             artist: "Slowdive",
             is_favorite: "false",
-            time: "5:37",
+            time: "537",
           });
 
           const parsedRes = JSON.parse(response.text);
@@ -152,7 +152,7 @@ describe("Songs", () => {
           const response = await request(songs).post("/songs").send({
             name: "Star Roving",
             is_favorite: "false",
-            time: "5:37",
+            time: "537",
           });
 
           const parsedRes = JSON.parse(response.text);
@@ -164,7 +164,7 @@ describe("Songs", () => {
           const response = await request(songs).post("/songs").send({
             artist: "Slowdive",
             is_favorite: "maybe",
-            time: "5:37",
+            time: "537",
           });
 
           const parsedRes = JSON.parse(response.text);
@@ -183,7 +183,7 @@ describe("Songs", () => {
         expect(parsedRes.name).toEqual("Fame");
         expect(parsedRes.artist).toEqual("David Bowie");
         expect(parsedRes.album).toEqual("Young Americans");
-        expect(parsedRes.time).toEqual("4:12");
+        expect(parsedRes.time).toEqual("412");
         expect(parsedRes.is_favorite).toEqual(true);
       });
 
@@ -200,7 +200,7 @@ describe("Songs", () => {
             name: "Bluebird of Happiness",
             artist: "Mojave 3",
             is_favorite: "true",
-            time: "9:13",
+            time: "913",
           });
 
           const parsedRes = JSON.parse(response.text);
@@ -209,7 +209,7 @@ describe("Songs", () => {
           expect(parsedRes.artist).toEqual("Mojave 3");
           expect(parsedRes.name).toEqual("Bluebird of Happiness");
           expect(parsedRes.is_favorite).toEqual(true);
-          expect(parsedRes.time).toEqual("9:13");
+          expect(parsedRes.time).toEqual("913");
         });
       });
       describe("handling an improper update request", () => {
@@ -217,7 +217,7 @@ describe("Songs", () => {
           const response = await request(songs).post("/songs").send({
             artist: "Mojave 3",
             is_favorite: "true",
-            time: "9:13",
+            time: "913",
           });
 
           const parsedRes = JSON.parse(response.text);
@@ -228,7 +228,7 @@ describe("Songs", () => {
           const response = await request(songs).post("/songs").send({
             name: "Bluebird of Happiness",
             is_favorite: "true",
-            time: "9:13",
+            time: "913",
           });
 
           const parsedRes = JSON.parse(response.text);
@@ -240,7 +240,7 @@ describe("Songs", () => {
           const response = await request(songs).post("/songs").send({
             artist: "Mojave 3",
             is_favorite: "maybe",
-            time: "9:13",
+            time: "913",
           });
 
           const parsedRes = JSON.parse(response.text);

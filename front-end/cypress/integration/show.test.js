@@ -12,7 +12,7 @@ describe("Show Page", () => {
   it("Has the correct properties displayed", () => {
     cy.get(".Song-Details").contains("Fame");
     cy.get(".Song-Details").contains("David Bowie");
-    cy.get(".Song-Details").contains("4:12");
+    cy.get(".Song-Details").contains("412");
     cy.get(".Song-Details").contains("⭐️");
   });
 
